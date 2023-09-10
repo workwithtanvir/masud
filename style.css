@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.custom-container {
+  width: 98vw;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid grey;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+.container-fluid {
+  height: 100vh;
+  background-color: #181818;
+}
+.profile {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.info {
+  background-color: #262626;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.name {
+  margin: 10px;
+  color: white;
+  font-family: "PT Sans", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#element {
+  margin-top: 15px;
+  color: orange;
+  font-family: "PT Sans", sans-serif;
+}
+
+.custom-icon {
+  margin-top: 20px;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.custom-icon a > i {
+  padding: 10px;
+  background-color: rgba(44, 44, 44, 255);
+  font-size: 35px;
+  color: white;
+  border-radius: 50%;
+}
+
+.contact-info {
+  width: 100%;
+  margin-top: 30px;
+}
+.mail,
+.phone,
+.location {
+  height: 7vh;
+  background-color: #262626;
+  border-radius: 10px;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+}
+
+.mail i,
+.phone i,
+.location i {
+  color: orange;
+  font-size: 25px;
+  margin: 4px 15px;
+}
+.location{
+  height: 10vh;
+}
+.mail span a,
+.phone span,
+.location span {
+  color: white;
+  font-size: 20px;
+}
+.location span {
+  margin-right: 5px;
+}
+
+.add-to-contact{
+  display: flex;
+  justify-content: center;
+}

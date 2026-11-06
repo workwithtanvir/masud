@@ -1,6 +1,33 @@
-* {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html,
+body {
+  background-color: #181818;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  color: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 15px;
 }
 
 .custom-container {
@@ -10,93 +37,125 @@
   border: 2px solid grey;
   border-radius: 10px;
   margin: 10px 0;
+  overflow: hidden;
 }
-.container-fluid {
-  height: 100vh;
-  background-color: #181818;
-}
+
 .profile {
+  flex-shrink: 0;
   height: 200px;
   width: 200px;
   object-fit: cover;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  background-color: #f8f9fa;
 }
 
 .info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.5rem;
   background-color: #262626;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
 
 .name {
-  margin: 10px;
-  color: white;
+  margin: 10px 0;
   font-family: "PT Sans", sans-serif;
   font-size: 20px;
   font-weight: bold;
 }
 
-#element {
-  margin-top: 15px;
+.info h4 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+#element,
+.cursor {
   color: orange;
   font-family: "PT Sans", sans-serif;
 }
 
+.cursor {
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
 .custom-icon {
   margin-top: 20px;
-  height: 10vh;
+  min-height: 10vh;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  border-radius: 20px;
 }
 
-.custom-icon a > i {
+.icon {
+  display: block;
+  width: 55px;
+  height: 55px;
   padding: 10px;
-  background-color: rgba(44, 44, 44, 255);
-  font-size: 35px;
-  color: white;
+  fill: currentColor;
+  color: #fff;
+  background-color: #2c2c2c;
   border-radius: 50%;
+  transition: color 0.2s;
+}
+
+.custom-icon a:hover .icon,
+.custom-icon a:focus-visible .icon {
+  color: orange;
 }
 
 .contact-info {
   width: 100%;
   margin-top: 30px;
 }
-.mail,
-.phone,
-.location {
-  height: 7vh;
+
+.row {
+  min-height: 7vh;
+  padding: 8px 5px 8px 0;
   background-color: #262626;
   border-radius: 10px;
   margin: 15px 0;
   display: flex;
   align-items: center;
-}
-
-.mail i,
-.phone i,
-.location i {
-  color: orange;
-  font-size: 25px;
-  margin: 4px 15px;
-}
-.location{
-  height: 10vh;
-}
-.mail span a,
-.phone span,
-.location span {
-  color: white;
   font-size: 20px;
-}
-.location span {
-  margin-right: 5px;
+  overflow-wrap: anywhere;
 }
 
-.add-to-contact{
+.row.location {
+  min-height: 10vh;
+}
+
+.row-icon {
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  margin: 4px 15px;
+  fill: orange;
+}
+
+.add-to-contact {
   display: flex;
   justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #ffc107;
+  border: 1px solid #ffc107;
+  border-radius: 0.3rem;
+  transition: color 0.15s, background-color 0.15s;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  color: #212529;
+  background-color: #ffc107;
 }
